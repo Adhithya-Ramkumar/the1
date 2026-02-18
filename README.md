@@ -342,6 +342,14 @@ Potential extensions and experiments:
 - Integration with existing inventory or asset management tools
 - Visual graph representations of purpose networks
 
+## Documentation
+
+- **[README.md](README.md)** - This file, full documentation
+- **[TUTORIAL.md](TUTORIAL.md)** - Step-by-step walkthrough with examples
+- **[QUICKREF.md](QUICKREF.md)** - Quick reference for commands and API
+- **[examples.py](examples.py)** - Three complete real-world scenarios
+- **[sample_data.json](sample_data.json)** - Sample data to try the system
+
 ## Contact
 
 For questions, suggestions, or collaboration opportunities, please open an issue on GitHub.
