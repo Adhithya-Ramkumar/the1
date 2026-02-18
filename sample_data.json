@@ -1,0 +1,56 @@
+{
+  "assets": [
+    {
+      "id": "laptop",
+      "name": "Personal Laptop",
+      "asset_type": "physical",
+      "description": "MacBook Pro for work and personal use",
+      "purposes": ["remote_work", "entertainment"],
+      "metadata": {}
+    },
+    {
+      "id": "netflix",
+      "name": "Netflix Subscription",
+      "asset_type": "digital",
+      "description": "Streaming service",
+      "purposes": ["entertainment"],
+      "metadata": {}
+    },
+    {
+      "id": "scanner_app",
+      "name": "Scanner App",
+      "asset_type": "digital",
+      "description": "Adobe Scan mobile app",
+      "purposes": ["document_scanning"],
+      "metadata": {}
+    },
+    {
+      "id": "shared_printer",
+      "name": "Shared Office Printer",
+      "asset_type": "shared",
+      "description": "Multi-function printer in building office",
+      "purposes": ["document_scanning"],
+      "metadata": {}
+    }
+  ],
+  "purposes": [
+    {
+      "id": "remote_work",
+      "name": "Remote Work",
+      "description": "Ability to work from home effectively",
+      "category": "work"
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "description": "Watch movies, shows, listen to music",
+      "category": "leisure"
+    },
+    {
+      "id": "document_scanning",
+      "name": "Document Scanning",
+      "description": "Digitize paper documents",
+      "category": "productivity"
+    }
+  ]
+}
