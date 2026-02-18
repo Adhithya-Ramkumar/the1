@@ -27,6 +27,16 @@ The system is implemented in pure Python with no external dependencies.
 
 ## Quick Start
 
+### Interactive Mode (Recommended for Beginners)
+
+```bash
+python cli.py interactive
+```
+
+Follow the prompts to build your purpose graph step by step.
+
+### Programmatic Use
+
 ```python
 from purpose_graph import PurposeGraph, AssetType
 
@@ -55,6 +65,20 @@ for info in overlap:
     print(f"{purpose.name}: {len(assets)} assets")
     for asset in assets:
         print(f"  - {asset.name} ({asset.asset_type.value})")
+```
+
+### Try the Examples
+
+```bash
+python cli.py examples
+```
+
+See complete scenarios: moving, co-living, and work transitions.
+
+### Load Sample Data
+
+```bash
+python -c "from cli import load_graph_from_json; graph = load_graph_from_json('sample_data.json'); print([p.name for p in graph.get_all_purposes()])"
 ```
 
 ## Core Concepts
@@ -199,7 +223,7 @@ summary = graph.get_coverage_summary()
 #### Consolidation Suggestions
 
 ```python
-# Get AI-generated consolidation suggestions
+# Get rule-based consolidation suggestions
 suggestions = graph.suggest_consolidation_opportunities()
 
 # Returns list of suggestions with types:
@@ -249,6 +273,8 @@ All 36 tests cover:
 
 ## Examples and Scenarios
 
+See **[TUTORIAL.md](TUTORIAL.md)** for a comprehensive walkthrough.
+
 See `examples.py` for three detailed scenarios:
 
 1. **Moving to a New Apartment**: Individual decision-making during relocation
@@ -258,8 +284,39 @@ See `examples.py` for three detailed scenarios:
 Run all examples:
 
 ```bash
+python cli.py examples
+# or
 python examples.py
 ```
+
+## Command-Line Interface
+
+The CLI provides easy access to all features:
+
+```bash
+# Interactive mode - build your graph step by step
+python cli.py interactive
+
+# Run example scenarios
+python cli.py examples
+
+# Run test suite
+python cli.py test
+```
+
+For programmatic use, you can also save and load graphs:
+
+```python
+from cli import save_graph_to_json, load_graph_from_json
+
+# Save a graph
+save_graph_to_json(graph, "my_graph.json")
+
+# Load a graph
+graph = load_graph_from_json("my_graph.json")
+```
+
+Sample data is provided in `sample_data.json`.
 
 ## Contributing
 
