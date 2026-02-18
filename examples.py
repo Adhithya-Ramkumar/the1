@@ -34,7 +34,7 @@ def example_relocation_scenario():
     # Personal assets (what the person currently owns)
     personal_assets = [
         Asset("laptop", AssetType.PHYSICAL, "Personal work computer"),
-        Asset("office365", AssetType.SUBSCRIPTION, "Cloud productivity suite"),
+        Asset("office-365", AssetType.SUBSCRIPTION, "Cloud productivity suite"),
         Asset("scanner", AssetType.PHYSICAL, "Flatbed document scanner"),
         Asset("adobe-scan-app", AssetType.DIGITAL, "Phone scanning app"),
         Asset("microwave", AssetType.PHYSICAL, "Personal microwave"),
@@ -57,7 +57,7 @@ def example_relocation_scenario():
     # Link assets to purposes
     # Remote work
     graph.link_asset_to_purpose("laptop", "remote work")
-    graph.link_asset_to_purpose("office365", "remote work")
+    graph.link_asset_to_purpose("office-365", "remote work")
     
     # Document scanning
     graph.link_asset_to_purpose("scanner", "document scanning")

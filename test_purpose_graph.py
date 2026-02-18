@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Tests for the purpose graph system
+Unit tests for the purpose graph system
 """
 
 import unittest
@@ -34,6 +34,35 @@ class TestAsset(unittest.TestCase):
         asset = Asset.from_dict(data)
         self.assertEqual(asset.name, "scanner")
         self.assertEqual(asset.asset_type, AssetType.PHYSICAL)
+    
+    def test_subscription_asset_type(self):
+        """Test creating an asset with SUBSCRIPTION type"""
+        asset = Asset("netflix", AssetType.SUBSCRIPTION, "Streaming service")
+        self.assertEqual(asset.name, "netflix")
+        self.assertEqual(asset.asset_type, AssetType.SUBSCRIPTION)
+        self.assertEqual(asset.description, "Streaming service")
+        
+        # Test serialization
+        data = asset.to_dict()
+        self.assertEqual(data["asset_type"], "subscription")
+        
+        # Test deserialization
+        loaded = Asset.from_dict(data)
+        self.assertEqual(loaded.asset_type, AssetType.SUBSCRIPTION)
+    
+    def test_asset_with_metadata(self):
+        """Test asset with metadata field"""
+        metadata = {"location": "home office", "purchased": "2023-01"}
+        asset = Asset("laptop", AssetType.PHYSICAL, "Work computer", metadata=metadata)
+        self.assertEqual(asset.metadata, metadata)
+        
+        # Test serialization with metadata
+        data = asset.to_dict()
+        self.assertEqual(data["metadata"], metadata)
+        
+        # Test deserialization with metadata
+        loaded = Asset.from_dict(data)
+        self.assertEqual(loaded.metadata, metadata)
 
 
 class TestPurpose(unittest.TestCase):
